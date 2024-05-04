@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ef769966-1f76-4a4a-b6ea-05f1e661a009">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+    e.empid,
+    e.firstname,
+    e.surname,
+    e.department,
+    p.datecalculated,
+    p.tot_allow,
+    p.tot_deduction,
+    p.netsal
+FROM
+    employee e
+INNER JOIN
+    pay_roll p ON e.empid = p.empid;]]>
+	</queryString>
+	<field name="empid" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="firstname" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="surname" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="department" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="datecalculated" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tot_allow" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tot_deduction" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="netsal" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="201" y="16" width="134" height="20" uuid="40648094-a23d-4321-9807-37ad8cb0e932"/>
+				<textElement>
+					<font fontName="Poppins" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Employee Payroll]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="30" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="28" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="72" height="20" uuid="325d0e3e-c448-4641-9cdf-d75300e55531"/>
+				<text><![CDATA[empid]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="72" y="2" width="70" height="20" uuid="3f6b39c6-c53a-4d2b-8c7a-b57f1419731b"/>
+				<text><![CDATA[firstname]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="142" y="0" width="72" height="20" uuid="ae98ef3b-209b-477b-bdcd-eb572aa4c1a0"/>
+				<text><![CDATA[surname]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="214" y="2" width="66" height="20" uuid="3c7273bf-8baf-41eb-9e20-e4dc26ce9851"/>
+				<text><![CDATA[department]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="2" width="68" height="20" uuid="8637d2df-1614-4107-80c8-6513d65f7539"/>
+				<text><![CDATA[datecalculated]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="348" y="2" width="73" height="20" uuid="c0e26338-b9aa-4ae4-9dce-1792eddcc31a"/>
+				<text><![CDATA[tot_allow]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="421" y="2" width="63" height="20" uuid="f40a5968-f9dd-4140-ad00-49bddb16c339"/>
+				<text><![CDATA[tot_deduction]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="484" y="2" width="71" height="20" uuid="609231b2-4386-4f6b-a0c3-92e1f35cae4d"/>
+				<text><![CDATA[netsal]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="29" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="72" height="20" uuid="2a4ee8ff-06f2-4058-b92b-3bc3d3719dba"/>
+				<textFieldExpression><![CDATA[$F{empid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="72" y="0" width="70" height="20" uuid="bb71e6bf-7851-4144-8035-7eeb5f3b0307"/>
+				<textFieldExpression><![CDATA[$F{firstname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="141" y="0" width="73" height="20" uuid="28fc1fa4-96bc-440d-9358-3dc70a26a1c1"/>
+				<textFieldExpression><![CDATA[$F{surname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="214" y="0" width="66" height="20" uuid="dabc007a-3c36-4488-998b-8239a55776a7"/>
+				<textFieldExpression><![CDATA[$F{department}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="0" width="68" height="20" uuid="a03127e6-ba97-43ff-97c3-d7ef6b8d1c84"/>
+				<textFieldExpression><![CDATA[$F{datecalculated}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="348" y="0" width="73" height="20" uuid="4e7ebb80-09db-44d3-82a3-2a7af8a63fbb"/>
+				<textFieldExpression><![CDATA[$F{tot_allow}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="421" y="0" width="63" height="20" uuid="5980fb0d-5550-4249-ba8e-92031deed692"/>
+				<textFieldExpression><![CDATA[$F{tot_deduction}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="484" y="0" width="71" height="20" uuid="e6e5e5a0-05bd-4d44-a06e-ba78bb1896a6"/>
+				<textFieldExpression><![CDATA[$F{netsal}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
